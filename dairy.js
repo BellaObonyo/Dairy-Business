@@ -18,9 +18,9 @@ function productioPerDay(){
     var shedDmilk=( shedDcows*shedDmilk) 
 
     document.getElementById('shedA').innerHTML = "Your production in Shed A " + shedAmilk+" litres per day";
-    document.getElementById('shedB').innerHTML = "Your production in Shed B " + shedAmilk+" litres per day";
-    document.getElementById('shedC').innerHTML = "Your production in Shed C " + shedAmilk+" litres per day";
-    document.getElementById('shedD').innerHTML = "Your production in Shed D " + shedAmilk+" litres per day";
+    document.getElementById('shedB').innerHTML = "Your production in Shed B " + shedBmilk+" litres per day";
+    document.getElementById('shedC').innerHTML = "Your production in Shed C " + shedCmilk+" litres per day";
+    document.getElementById('shedD').innerHTML = "Your production in Shed D " + shedDmilk+" litres per day";
   
     // alert( "Your production in Shed A " + shedAmilk+" litres per day")
     // alert( "Your production in Shed B " + shedBmilk+" litres per day")
@@ -48,7 +48,7 @@ function productioPerDay(){
     
     Object.entries(months).forEach(([key, value]) => {
         console.log('Your income for ' +key+ ' is ' + (value * totallittresperday * 45) + ' ksh');
-        document.getElementById('monthlyincome').innerHTML += 'Your income for ' +key+ ' is ' + (value * totallittresperday * 45) + ' ksh';
+        // document.getElementById('monthlyincome').innerHTML += 'Your income for ' +key+ ' is ' + (value * totallittresperday * 45) + ' ksh';
         
         sum += (value * totallittresperday * 45)
         
