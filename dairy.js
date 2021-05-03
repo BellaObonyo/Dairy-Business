@@ -15,19 +15,18 @@ function productioPerDay(){
     
     var shedDcows= parseInt(document.getElementById('dcows').value);
     var shedDmilk= parseInt(document.getElementById('dmilk').value);
-    var shedDmilk=( shedDcows*shedDmilk) 
+    var shedDmilk=( shedDcows*shedDmilk)
+    
+    document.getElementById('wrapper').style.display = "block"
 
     document.getElementById('shedA').innerHTML = "Your production in Shed A " + shedAmilk+" litres per day";
     document.getElementById('shedB').innerHTML = "Your production in Shed B " + shedBmilk+" litres per day";
     document.getElementById('shedC').innerHTML = "Your production in Shed C " + shedCmilk+" litres per day";
     document.getElementById('shedD').innerHTML = "Your production in Shed D " + shedDmilk+" litres per day";
   
-    // alert( "Your production in Shed A " + shedAmilk+" litres per day")
-    // alert( "Your production in Shed B " + shedBmilk+" litres per day")
-    // alert( "Your production in Shed C " + shedCmilk+" litres per day")
-    // alert( "Your production in Shed D " + shedDmilk+" litres per day")
     var totallittresperday= (shedAmilk + shedBmilk + shedCmilk + shedDmilk)
     console.log (totallittresperday)
+    document.getElementById('totalperday').innerHTML = "Your total liters per day is " +totallittresperday+ " in all sheds."
       
     var months={
         "January" :31,
@@ -47,13 +46,23 @@ function productioPerDay(){
     sum = 0
     
     Object.entries(months).forEach(([key, value]) => {
-        console.log('Your income for ' +key+ ' is ' + (value * totallittresperday * 45) + ' ksh');
-        // document.getElementById('monthlyincome').innerHTML += 'Your income for ' +key+ ' is ' + (value * totallittresperday * 45) + ' ksh';
+      
+      document.getElementById('monthlyincome').innerHTML += 'Your income for ' +key+ ' is ' + (value * totallittresperday * 45) + ' ksh <br><br>';
         
         sum += (value * totallittresperday * 45)
-        
+          
     });
 
-    console.log('Income for the year is ' + sum)
+    document.getElementById('totalincomeperyear').innerHTML = "Your total income per year is is " +sum+ " ksh."    
     
 }
+
+// form validate
+function validateForm() {
+    var x =  document.forms["myForm"]["fname"].value;
+    if (x == "") {
+        alert("Please enter values in the form");
+        return false;
+    }
+}
+
